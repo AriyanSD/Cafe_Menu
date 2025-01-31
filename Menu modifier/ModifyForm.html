@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modify JSON File</title>
+    <style>
+
+      h1 {
+        background-color: #553912;
+        text-align: center;
+        font-family: cursive;
+        color: rgb(255, 255, 255);
+        text-shadow: 0px 1px 0px rgb(54, 33, 9);
+        font-weight: normal;
+        height: 5cm;
+        border-radius: 10pt;
+        text-align: center;
+      }
+      .item {
+        border: 1px solid #38250b;
+        border-style: dotted;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #966726;
+      }
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #saveFile {
+        font-size: 13pt;
+        font-family: cursive;
+        background: rgb(110, 55, 9);
+        color: #ffff;
+        border-radius: 16pt;
+        margin-right: 28pt;
+        margin-top: 28pt;
+        margin-left: 45%;
+      }
+      #saveFile:hover {
+        background-color: rgb(68, 41, 18);
+      }
+      #saveFile:disabled {
+        background-color: rgba(203, 206, 209, 0.438);
+        color: rgba(163, 163, 163, 0.438);
+      }
+      #jsonContent {
+        padding: 50px;
+      }
+      .item {
+        width: 100%;
+        border-radius: 20px;
+        border-width: 2px;
+        font-family: cursive;
+        color: rgb(253, 253, 253);
+      }
+      .item input {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-radius: 5px;
+        border-color: #000000;
+        background-color: #ffffff;
+        border-style: dotted;
+      }
+      .item button {
+        font-family: cursive;
+        background: rgb(9, 110, 51);
+        color: #ffff;
+        border-radius: 5pt;
+        margin-top: 5px;
+      }
+      .content-item button {
+        font-family: cursive;
+        background: rgb(138, 18, 38);
+        color: #ffff;
+        border-radius: 5pt;
+      }
+      .item-header button {
+        background: rgb(139, 13, 13);
+      }
+      #addButton {
+        font-family: cursive;
+        background: rgb(9, 110, 51);
+        color: #ffff;
+        border-radius: 5pt;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <h1>Modify Menu Panel</h1>
+    <button id="saveFile" disabled>Save JSON File</button>
+    <br /><br />
+    <div id="jsonContent"></div>
+
+    <script>
+      let jsonData;
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        const response = await fetch("data.json");
+        jsonData = await response.json();
+        document.getElementById("saveFile").disabled = false;
+        displayJsonContent();
+      });
+      console.log(jsonData);
+      document
+        .getElementById("saveFile")
+        .addEventListener("click", async () => {
+          const writable = await window.showSaveFilePicker({
+            types: [
+              {
+                description: "JSON Files",
+                accept: { "application/json": [".json"] },
+              },
+            ],
+          });
+
+          const writableStream = await writable.createWritable();
+          await writableStream.write(
+            new Blob([JSON.stringify(jsonData, null, 2)], {
+              type: "application/json",
+            })
+          );
+          await writableStream.close();
+          alert("File saved successfully");
+        });
+
+      function displayJsonContent() {
+        const jsonContent = document.getElementById("jsonContent");
+        jsonContent.innerHTML = "";
+
+        jsonData.forEach((item, index) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.classList.add("item");
+
+          itemDiv.innerHTML = `
+                  <div class="item-header">
+                      <h3>Type: <input type="text" value="${
+                        item.type
+                      }" onchange="updateType(${index}, this.value)"></h3>
+                      <button onclick="removeItem(${index})">Remove</button>
+                  </div>
+                  <label>Title Image: <input type="text" value="${
+                    item.titleImage
+                  }" onchange="updateTitleImage(${index}, this.value)"></label>
+                  <div id="content-${index}">
+                      ${item.content
+                        .map(
+                          (contentItem, contentIndex) => `
+                          <div class="content-item">
+                              <h4>Title: <input type="text" value="${contentItem.title}" onchange="updateContentTitle(${index}, ${contentIndex}, this.value)"></h4>
+                              <label>Image: <input type="text" value="${contentItem.img}" onchange="updateContentImage(${index}, ${contentIndex}, this.value)"></label><br>
+                              <label>Description: <textarea onchange="updateContentDescription(${index}, ${contentIndex}, this.value)">${contentItem.description}</textarea></label><br>
+                              <label>Price: <input type="number" value="${contentItem.price}" onchange="updateContentPrice(${index}, ${contentIndex}, this.value)"></label><br>
+                              <button onclick="removeContentItem(${index}, ${contentIndex})">Remove Content Item</button>
+                          </div>
+                      `
+                        )
+                        .join("")}
+                      <button onclick="addContentItem(${index})" >Add Content Item</button>
+                  </div>
+              `;
+
+          jsonContent.appendChild(itemDiv);
+        });
+
+        const addButton = document.createElement("button");
+        addButton.textContent = "Add Item";
+        addButton.onclick = addItem;
+        addButton.id = "addButton";
+        jsonContent.appendChild(addButton);
+      }
+
+      function updateType(index, value) {
+        jsonData[index].type = value;
+      }
+
+      function updateTitleImage(index, value) {
+        jsonData[index].titleImage = value;
+      }
+
+      function updateContentTitle(index, contentIndex, value) {
+        jsonData[index].content[contentIndex].title = value;
+      }
+
+      function updateContentImage(index, contentIndex, value) {
+        jsonData[index].content[contentIndex].img = value;
+      }
+
+      function updateContentDescription(index, contentIndex, value) {
+        jsonData[index].content[contentIndex].description = value;
+      }
+
+      function updateContentPrice(index, contentIndex, value) {
+        jsonData[index].content[contentIndex].price = parseFloat(value);
+      }
+
+      function addItem() {
+        jsonData.push({
+          type: "",
+          titleImage: "",
+          content: [],
+        });
+        displayJsonContent();
+      }
+
+      function removeItem(index) {
+        jsonData.splice(index, 1);
+        displayJsonContent();
+      }
+
+      function addContentItem(index) {
+        jsonData[index].content.push({
+          img: "",
+          title: "",
+          description: "",
+          price: 0,
+        });
+        displayJsonContent();
+      }
+
+      function removeContentItem(index, contentIndex) {
+        jsonData[index].content.splice(contentIndex, 1);
+        displayJsonContent();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+#body {
+  padding: 2rem;
+}
+
+@font-face {
+  font-family: "farsiFont";
+  src: url("Mj_Thameen_Light_0.ttf");
+
+}
+@font-face {
+  font-family: "englishFont";
+  src: url("Bottom_Brazil.otf");
+}
+* {
+  font-family: "farsiFont";
+  padding: 0;
+  margin: 0;
+}
+#header_banner {
+  position: relative;
+  background-image: linear-gradient(
+      rgba(43, 42, 42, 0.5),
+      rgba(190, 179, 179, 0.5)
+    ),
+    url("/assets/header.jpeg");
+  background-size: cover;
+  background-position: center top;
+  height: 300px;
+  color: #ffffff;
+  width: 100%;
+  box-shadow: 0px 10px 20px rgba(49, 82, 23, 0.5);
+}
+
+#header_banner h1 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: englishFont;
+  color: rgb(80, 36, 15);
+  text-align: center;
+}
+
+/* #header_banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(73, 72, 72, 0.5);
+} */
+#menu-container h2 {
+  font-size: xx-large;
+  text-shadow: 1px 1px 2px brown;
+}
+.menu-item {
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  box-shadow: 0px 2px 5px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 20px 20px;
+}
+.menu-item img {
+  width: 150px;
+  height: 150px;
+}
+.menu-item h3 {
+  color: rgb(83, 23, 21);
+  font-size: 20pt;
+}
+.menu-item #title-en {
+  font-family: "englishFont";
+  color: rgb(83, 23, 21);
+  font-size: 20pt;
+}
+.menu-item p {
+  color: rgb(83, 23, 21);
+  font-size: 12pt;
+  font-weight: bold;
+  padding: 3pt;
+}
+.menu-item span {
+  position: absolute;
+  float: left;
+  font-family: "englishFont";
+  font-size: xx-large;
+  font-weight: bold;
+  left: 15pt;
+  bottom: 7pt;
+}
+
+#menu-bar {
+  max-width: 100%;
+  position: relative;
+  border: none;
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  box-shadow: 0px 2px rgb(112, 27, 27);
+  border-radius: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#menu-bar li {
+  position: relative;
+  margin-right: 10px; /* Add some space between menu items */
+}
+
+#menu-bar button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 18pt;
+  font-weight: bold;
+  background-color: transparent;
+  color: rgb(83, 23, 21);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#menu-bar img {
+  width: 80px;
+  height: 80px;
+}
+#loading {
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 999;
+  height: 100hw;
+  width: 100vw;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+#loading img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200pt;
+  width: 50%;
+}
+#logo {
+  position: static;
+  width: 150px;
+  height: 150px;
+  margin-top: 200px;
+  margin-right: 80px;
+}
+.fa {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 100%;
+  margin-top: 250px;
+  float: left;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-instagram {
+  background: #251e35;
+  color: white;
+  margin-right: 5px;
+}
+.fa-telegram {
+  color: white;
+}
+.fa-telegram img {
+  width: 42px;
+  height: 42px;
+}
+.fa-instagram img {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+}

@@ -1,0 +1,246 @@
+[
+  {
+    "type": "نوشیدنی‌های گرم",
+    "titleImage": "/assets/hot-drinks.webp",
+    "content": [
+      {
+        "img": "/assets/Espresso-150x150.webp",
+        "title": "اسپرسو سینگل",
+        "titleEN": "Single Espresso",
+        "description": "یک شات عصاره غلیظ قهوه(30 عربیکا 70 روبستا)",
+        "price": 25
+      },
+      {
+        "img": "/assets/Espresso-double.png",
+        "title": "اسپرسو دبل",
+        "titleEN": "Double Espresso",
+        "description": "دو شات عصاره غلیظ قهوه(30 عربیکا 70 روبستا)",
+        "price": 30
+      },
+      {
+        "img": "/assets/Espresso-Macchiato-150x150.webp",
+        "title": "اسپرسو ماکیاتو",
+        "titleEN": "Espresso Macchiato",
+        "description": "دبل شات اسپروسو + لکه شیر",
+        "price": 35
+      },
+      {
+        "img": "/assets/Espresso-Affogato-150x150.webp",
+        "title": "اسپرسو آفوگاتو",
+        "titleEN": "Espresso Affogato",
+        "description": "",
+        "price": 40
+      },
+      {
+        "img": "/assets/Americano-150x150.webp",
+        "title": "آمریکانو",
+        "titleEN": "Americano",
+        "description": "",
+        "price": 33
+      },
+      {
+        "img": "/assets/Cortado-150x150.webp",
+        "title": "کورتادو",
+        "titleEN": "Cortado",
+        "description": "اسپرو دبل + 70 میل شیر",
+        "price": 40
+      },
+      {
+        "img": "/assets/Caramel-Macchiato-150x150.webp",
+        "title": "کارامل ماکیاتو",
+        "titleEN": "Caramel Macchiato",
+        "description": "",
+        "price": 50
+      },
+      {
+        "img": "/assets/Mocha-150x150.webp",
+        "title": "موکا",
+        "titleEN": "Mocha",
+        "description": "",
+        "price": 50
+      },
+      {
+        "img": "/assets/Hot-Chocolate-150x150.webp",
+        "title": "شکلات داغ​",
+        "titleEN": "Hot Chocolate",
+        "description": "",
+        "price": 40
+      },
+      {
+        "img": "/assets/Chai-Latte-Masala-150x150.webp",
+        "title": "چای ماسالا",
+        "titleEN": "Chai Masala",
+        "description": "",
+        "price": 40
+      },
+      {
+        "img": "/assets/Steamed-Milk-150x150.webp",
+        "title": "شیر گرم",
+        "titleEN": "Steamed Milk",
+        "description": "",
+        "price": 20
+      },
+      {
+        "img": "/assets/Turmirec-Latte-150x150.webp",
+        "title": "شیرعسل",
+        "titleEN": "Honey Milk",
+        "description": "",
+        "price": 30
+      },
+      {
+        "img": "/assets/Cappuccino-150x150.webp",
+        "title": "کاپوچینو",
+        "titleEN": "Cappuccino",
+        "description": "",
+        "price": 40
+      },
+      {
+        "img": "/assets/Latte-150x150.webp",
+        "title": "لاته",
+        "titleEN": "Latte",
+        "description": "",
+        "price": 45
+      }
+    ]
+  },
+  {
+    "type": "نوشیدنی‌های سرد",
+    "titleImage": "/assets/cold-drinks.webp",
+    "content": [
+      {
+        "img": "/assets/Iced-Americano-150x150.webp",
+        "title": "آمریکانو سرد",
+        "titleEN": "Iced Americano",
+        "description": "",
+        "price": 35
+      },
+      {
+        "img": "/assets/Iced-Latte-150x150.webp",
+        "title": "لاته سرد",
+        "titleEN": "Iced Latte",
+        "description": "",
+        "price": 50
+      },
+      {
+        "img": "/assets/Iced-Mocha-150x150.webp",
+        "title": "موکا سرد",
+        "titleEN": "Iced Mocha",
+        "description": "",
+        "price": 55
+      },
+      {
+        "img": "/assets/Iced-Caramel-Macchiato-150x150.webp",
+        "title": "کارامل ماکیاتو سرد",
+        "titleEN": "Iced Caramel Macchiato",
+        "description": "",
+        "price": 55
+      },
+      {
+        "img": "/assets/Iced-Chocolate-150x150.webp",
+        "title": "شکلات سرد فندق",
+        "titleEN": "Iced Hazelnut Chocolate",
+        "description": "",
+        "price": 45
+      },
+      {
+        "img": "/assets/Cappachillo-150x150.webp",
+        "title": "کاپاچیلو",
+        "titleEN": "Cappachillo",
+        "description": "بســتنی، یــخ و اسپرســو",
+        "price": 55
+      },
+      {
+        "img": "/assets/Mochachillo-150x150.webp",
+        "title": "موکاچیلو",
+        "titleEN": "Mochachillo",
+        "description": "شــکلات ، اسپرســو ، بســتنی و یــخ ",
+        "price": 60
+      }
+    ]
+  },
+  {
+    "type": "قهوه دمی",
+    "titleImage": "/assets/daily-brew-icons.webp",
+    "content": [
+      {
+        "img": "/assets/French-Press-150x150.webp",
+        "title": "فرنچ پرس",
+        "titleEN": "French Press",
+        "description": "",
+        "price": 45
+      },
+      {
+        "img": "/assets/Siphon-150x150.webp",
+        "title": "سایفون",
+        "titleEN": "Siphon",
+        "description": "",
+        "price": 70
+      },
+      {
+        "img": "/assets/v60-150x150.webp",
+        "title": "وی ۶۰",
+        "titleEN": "V60",
+        "description": "",
+        "price": 60
+      }
+    ]
+  },
+  {
+    "type": "چای و دمنوش",
+    "titleImage": "/assets/Tea-Herbal-logo.webp",
+    "content": [
+      {
+        "img": "/assets/Tea-Herbal-150x150.webp",
+        "title": "چای سیاه لیوانی",
+        "titleEN": "Black Tea (Cup)",
+        "description": "",
+        "price": 30
+      },
+      {
+        "img": "/assets/tea-real.jpeg",
+        "title": "چای سیاه دمی",
+        "titleEN": "Black Tea (Brewed)",
+        "description": "",
+        "price": 40
+      },
+      {
+        "img": "/assets/green-tea.jpeg",
+        "title": "چای سبز",
+        "titleEN": "Green Tea",
+        "description": "",
+        "price": 40
+      },
+      {
+        "img": "/assets/borage.jpeg",
+        "title": "چای گل گاو زبان",
+        "titleEN": "Borage Tea",
+        "description": "",
+        "price": 40
+      },
+      {
+        "img": "/assets/green-tea.jpeg",
+        "title": "چای نعنا",
+        "titleEN": "Mint Tea",
+        "description": "",
+        "price": 40
+      },
+      {
+        "img": "/assets/baboneh.jpeg",
+        "title": " چای بابونه",
+        "titleEN": "Chamomile Tea",
+        "description": "",
+        "price": 40
+      }
+    ]
+  },
+  {
+    "type": "کیک‌ها",
+    "titleImage": "/assets/cake.webp",
+    "content": []
+  },
+  {
+    "type": "افزودنی‌ها",
+    "titleImage": "/assets/extra-drinks.webp",
+    "content": []
+  }
+]
